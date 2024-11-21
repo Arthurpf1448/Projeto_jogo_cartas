@@ -9,7 +9,7 @@ import static main.Main.preencherDeck;
 public interface setupDeckInterface {
     public static void setupDeck(Deck deckDoJogador) {
         Deck deckTotal = new Deck();
-        preencherDeck(deckTotal);
+        //preencherDeck(deckTotal);
         Scanner in = new Scanner(System.in);
         System.out.println("Escolha suas cartas!");
 

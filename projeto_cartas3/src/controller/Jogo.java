@@ -13,10 +13,14 @@ public class Jogo implements Atacavel, Jogavel {
 
     }
     @Override
-    public void atacar(Jogador jogador, Criatura atacante, Criatura defensor) {
+    public void atacar(Jogador jogadorA, Jogador jogadorD, Criatura atacante, Criatura defensor) {
         try {
-            if (jogador.getMana() < atacante.getCustoDeMana()) {
+            if (jogadorA.getMana() < atacante.getCustoDeMana()) {
                 throw new manaInsuficienteException("Mana insuficiente para atacar!");
+            } else{
+                if(atacante.getPoder() >= defensor.getResistencia()){
+                    jogadorD.getCemiterio().addCartaCemiterio(atacante);
+                }
             }
         } catch (manaInsuficienteException e) {
             System.out.println(e.getMessage());

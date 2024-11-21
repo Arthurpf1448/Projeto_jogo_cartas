@@ -5,6 +5,7 @@ public class Jogador extends Deck{
   private int mana;
   private Deck deck;
   private int countXp;
+  private Cemiterio cemiterio;
 
   void progressao(int countXp){
     int[] level = new int[11];
@@ -25,11 +26,18 @@ public class Jogador extends Deck{
     return deck;
   }
 
-  public Jogador(int vida, int mana, Deck deck){
-
+  public Jogador(int vida, int mana, Deck deck, Cemiterio cemiterio){
+    this.vida = vida;
+    this.mana = mana;
+    this.deck = deck;
+    this.cemiterio = cemiterio;
   }
 
   public int getMana() {
     return mana;
+  }
+
+  public Cemiterio getCemiterio() {
+    return cemiterio;
   }
 }
